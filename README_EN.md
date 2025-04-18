@@ -98,7 +98,7 @@ To modify default configurations, edit the following in the source code:
 
 ## Output Power Test
 
-![output power test]./img/power_test.png
+![output power test](./img/power_test.png)
 
 ## 👨‍💻 Author
 

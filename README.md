@@ -99,7 +99,7 @@
 4. 将网页文件上传到SPIFFS文件系统
 
 ## 输出功率
-![output power test]./img/power_test.png
+![output power test](./img/power_test.png)
 
 ## 👨‍💻 作者
 

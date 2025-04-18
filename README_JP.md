@@ -98,7 +98,7 @@ Webインターフェースでは、以下の設定が可能です：
 
 ## Output Power Test
 
-![output power test]./img/power_test.png
+![output power test](./img/power_test.png)
 
 ## 👨‍💻 作者
 
