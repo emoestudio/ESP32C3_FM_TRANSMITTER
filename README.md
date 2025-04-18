@@ -1,6 +1,6 @@
 # ESP32C3 QN8027 FM 发射机
 
-<!-- Coilcraft Logo to be added - see img/coilcraft_logo_instructions.txt -->
+![Coilcraft logo](./img/coilcraft_logo.png)
 
 **赞助商：Coilcraft**
 

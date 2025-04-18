@@ -1,6 +1,6 @@
 # ESP32C3 QN8027 FM トランスミッター
 
-<!-- Coilcraft Logo to be added - see img/coilcraft_logo_instructions.txt -->
+![Coilcraft logo](./img/coilcraft_logo.png)
 
 **スポンサー：Coilcraft**
 
