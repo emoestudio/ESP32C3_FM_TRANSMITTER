@@ -96,6 +96,10 @@ To modify default configurations, edit the following in the source code:
 3. Compile and upload to ESP32 board
 4. Upload web files to SPIFFS file system
 
+## Output Power Test
+
+![output power test]./img/power_test.png
+
 ## 👨‍💻 Author
 
 [TerayTech](https://space.bilibili.com/24434095)

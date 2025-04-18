@@ -98,6 +98,9 @@
 3. 编译上传到ESP32开发板
 4. 将网页文件上传到SPIFFS文件系统
 
+## 输出功率
+![output power test]./img/power_test.png
+
 ## 👨‍💻 作者
 
 [TerayTech](https://space.bilibili.com/24434095)

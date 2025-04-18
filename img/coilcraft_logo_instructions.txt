@@ -1,8 +1,0 @@
-Instructions for adding the Coilcraft logo:
-
-1. Download the Coilcraft logo from their official website (https://www.coilcraft.com/)
-2. Save the logo as "coilcraft_logo.png" in this directory (img/)
-3. The logo should be in PNG format with a transparent background if possible
-4. A recommended size would be around 200-300px wide for proper display in the README
-
-The Coilcraft logo is used in the README files to acknowledge their sponsorship and their 0805HP series ceramic chip inductors used in this project.
