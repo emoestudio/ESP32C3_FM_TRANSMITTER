@@ -1,0 +1,53 @@
+# yaml-language-server: $schema=https://json.schemastore.org/github-workflow.json
+
+name: Build (Arduino)
+
+on:
+  push:
+    branches:
+      - main
+      - dev
+  pull_request:
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.event.pull_request.number || github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  arduino-rpi:
+    name: Arduino RPI
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        board:
+          - rpipicow
+          - rpipico2w
+
+    steps:
+      - name: Install arduino-cli
+        run: curl -fsSL https://raw.githubusercontent.com/arduino/arduino-cli/master/install.sh | BINDIR=/usr/local/bin sh
+
+      - name: Update core index
+        run: arduino-cli core update-index --additional-urls https://github.com/earlephilhower/arduino-pico/releases/download/global/package_rp2040_index.json
+
+      - name: Install core
+        run: arduino-cli core install --additional-urls https://github.com/earlephilhower/arduino-pico/releases/download/global/package_rp2040_index.json rp2040:rp2040
+
+      - name: Install ArduinoJson
+        run: arduino-cli lib install ArduinoJson
+
+      - name: Install RPAsyncTCP
+        run: ARDUINO_LIBRARY_ENABLE_UNSAFE_INSTALL=true arduino-cli lib install --git-url https://github.com/ayushsharma82/RPAsyncTCP#v1.3.0
+
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Build Examples
+        run: |
+          for i in `ls examples`; do
+            echo "============================================================="
+            echo "Building examples/$i..."
+            echo "============================================================="
+            arduino-cli compile --library . --warnings none -b rp2040:rp2040:${{ matrix.board }} "examples/$i/$i.ino"
+          done

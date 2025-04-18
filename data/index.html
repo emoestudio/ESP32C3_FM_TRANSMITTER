@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FM发射机控制面板</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>FM发射机控制面板</h1>
+        
+        <div class="card">
+            <h2>基本设置</h2>
+            <div class="form-group">
+                <label for="frequency">发射频率 (MHz)</label>
+                <input type="number" id="frequency" min="76" max="108" step="0.1">
+            </div>
+            
+            <div class="form-group">
+                <label for="txPower">发射功率 (%)</label>
+                <input type="range" id="txPower" min="0" max="100" step="1">
+                <span id="powerValue">75%</span>
+            </div>
+            
+            <div class="form-group">
+                <label for="txFreqDeviation">频率偏差 (kHz)</label>
+                <input type="number" id="txFreqDeviation" min="10" max="200">
+            </div>
+        </div>
+        
+        <div class="card">
+            <h2>RDS设置</h2>
+            <div class="form-group">
+                <label for="rdsEnabled">启用RDS</label>
+                <input type="checkbox" id="rdsEnabled">
+            </div>
+            
+            <div class="form-group">
+                <label for="stationName">电台名称 (最多8字符)</label>
+                <input type="text" id="stationName" maxlength="8">
+            </div>
+            
+            <div class="form-group">
+                <label for="radioText">电台文本</label>
+                <input type="text" id="radioText">
+            </div>
+        </div>
+        
+        <div class="card">
+            <h2>音频设置</h2>
+            <div class="form-group">
+                <label for="monoAudio">单声道模式</label>
+                <input type="checkbox" id="monoAudio">
+            </div>
+            
+            <div class="form-group">
+                <label for="preEmphTime50">预加重50μs</label>
+                <input type="checkbox" id="preEmphTime50">
+            </div>
+        </div>
+        
+        <button id="saveBtn" class="button">保存设置</button>
+        <div id="statusMsg"></div>
+    </div>
+    
+    <script src="script.js"></script>
+</body>
+</html>
